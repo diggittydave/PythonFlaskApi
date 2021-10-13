@@ -1,0 +1,10 @@
+{% extends "layout.html" %} 
+{% block title %}Server Error{% endblock %} 
+{% block content %} 
+  
+  <h1>Something Went Horribly Wrong!(500)</h1> 
+  <p>We are experiencing an error on our end. Please try again in the near future.</p>
+  <p>If the problem perisits, please contact Development</p>
+  <a href="{{ url_for('main.about') }}"><p>Click Here</a>To go to the Home Page</p> 
+  
+{% endblock %} 

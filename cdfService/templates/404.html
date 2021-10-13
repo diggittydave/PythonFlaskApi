@@ -1,0 +1,9 @@
+{% extends "layout.html" %} 
+{% block title %}Page Not Found{% endblock %} 
+{% block content %} 
+  
+  <h1>Oops!(Error 404) </h1>
+  <p>Looks like the page doesn't exist anymore</p> 
+  <a href="{{ url_for('main.about') }}"><p>Click Here</a>To go to the Home Page</p> 
+  
+{% endblock %} 

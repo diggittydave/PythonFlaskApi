@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>CDF FILTERS</h1>
+        <body>
+            <br> <a class="nav-item nav-link" href="{{ url_for('cdfFilter.filter_switch')}}">Filter management</a>
+            <div>
+            <table border="10" style="border-collapse: collapse">
+            <tr>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    Regex pattern to match
+                </td>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    Associated Service
+                </td>
+            </tr>
+            {% for post in posts.items %}
+            <tr>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    <a class="nav-item nav-link" href="{{ url_for('cdfFilter.filter', RESTRICTION=post.RESTRICTION) }}">{{ post.RESTRICTION }}</a>
+                </td>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">    
+                    {{ post.SERVICE }}
+                </td>
+            </tr>
+            {% endfor %}
+            <div class="pagenums" style="font-kerning: auto;">
+            {% for page_num in posts.iter_pages() %}
+                {% if page_num %}
+                    <a class="btn btn-outline-info mb-4" href="{{ url_for('cdfFilter.filter_list', RESTRICTION=RESTRICTION, page=page_num) }}">{{ page_num }}</a>
+                {% else %}
+                    ...
+                {% endif %}
+            {% endfor %}
+            </div>
+        </table>
+        </div>
+        <div class="content-section">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4"></legend>
+                    <div class="form-group">
+                        {{ form.filter.label(class="form-control-label") }}
+                        {% if form.filter.errors %}
+                            {{ form.filter(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                            {% for error in form.filter.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.filter(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.service.label(class="form-control-label") }}
+                        {% if form.service.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.service.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.service(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit_filter(class="btn btn-outline-info") }}
+                </div>
+                
+            </form>
+        </div>
+        <b1>
+             <a class="nav-item nav-link" style="text-align: center;" href="{{ url_for('cdfFilter.filter_reload')}}">Start flag reload process</a> 
+        </b1>
+        </body>
+{% endblock content %}

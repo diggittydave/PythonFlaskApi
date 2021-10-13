@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>CDF SEARCH</h1>
+        <body>
+            <div class="content-section">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4"></legend>
+                        <div class="form-group">
+                            {{ form.search.label(class="form-control-label") }}
+                            {% if form.search.errors %}
+                                {{ form.search(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                {% for error in form.search.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.search(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    <div class="form-check">
+                        {{ form.starts_with(class="form-check-input") }}
+                        {{ form.starts_with.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check">
+                        {{ form.contains(class="form-check-input") }}
+                        {{ form.contains.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                    <b1>
+                    <a class="nav-item nav-link" style="text-align: center;" href="{{ url_for('cdfData.build_rerun')}}">Missing CDFs? Click here!</a>
+                    </b1>
+                </form>
+            </div>
+            <div>
+            <table border="10" style="border-collapse: collapse">
+            <tr>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    ID Key
+                </td>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    CDF NAME
+                </td>
+            </tr>
+            {% for post in posts.items %}
+            <tr>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    <a class="nav-item nav-link" href="{{ url_for('cdfData.webapp_get_cdf', ID_KEY=post.ID_KEY, page=page_num) }}">{{ post.ID_KEY }}</a>
+                </td>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">    
+                    {{ post.CDF_NAME }}
+                </td>
+            </tr>
+            {% endfor %}
+            <div class="pagenums" style="font-kerning: auto;">
+            {% for page_num in posts.iter_pages() %}
+                {% if page_num %}
+                    <a class="btn btn-outline-info mb-4" href="{{ url_for('cdfData.webapp_cdf_search_key', key=key, page=page_num) }}">{{ page_num }}</a>
+                {% else %}
+                    ...
+                {% endif %}
+            {% endfor %}
+            </div>
+        </table>
+        <b1>
+         <a class="nav-item nav-link" style="text-align: center;" href="{{ url_for('cdfData.build_rerun')}}">Missing CDFs? Click here!</a>
+        </b1>
+        </div>
+    </body>
+        
+{% endblock content %}

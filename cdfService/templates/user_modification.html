@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>USERS TABLE CONTENT</h1>
+        <body>
+            <div>
+            <table border="1" style="border-collapse: collapse">
+            <tr>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    User ID
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    User Name
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    Admin Status
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    Filter Modification Access
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    Data Modification Access
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    User Modification Access
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    Filter View Access
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    Data View Access
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    Last Updated By
+                </td>
+                <td width="80" style="border: 5px solid rgb(255, 0, 0)">
+                    Last date Updated
+                </td>
+            </tr>
+            {% for post in posts %}
+            <tr width="80" style="border: 5px solid rgb(255, 0, 0)">
+                <td>
+                {{ post.public_id }}
+                </td>
+                <td>
+                    {{ post.name }}
+                </td>
+                <td>
+                    {{ post.admin }}
+                </td>
+                <td>
+                    {{ post.cdf_filter }}
+                </td>
+                <td>
+                    {{ post.cdf_data }}
+                </td>
+                <td>
+                    {{ post.User_Admin }}
+                </td>
+                <td>
+                    {{ post.cdf_filter_view }}
+                </td>
+                <td>
+                    {{ post.cdf_data_view }}
+                </td>
+                <td>
+                    {{ post.updated_by }}
+                </td>
+                <td>
+                    {{ post.date_updated }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        <div class="content-section">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4"></legend>
+                    <div class="form-check">
+                        {{ form.admin(class="form-check-input") }}
+                        {{ form.admin.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check">
+                        {{ form.cdf_filter(class="form-check-input") }}
+                        {{ form.cdf_filter.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check">
+                        {{ form.cdf_data(class="form-check-input") }}
+                        {{ form.cdf_data.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check">
+                        {{ form.User_Admin(class="form-check-input") }}
+                        {{ form.User_Admin.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check">
+                        {{ form.cdf_filter_view(class="form-check-input") }}
+                        {{ form.cdf_filter_view.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check">
+                        {{ form.cdf_data_view(class="form-check-input") }}
+                        {{ form.cdf_data_view.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check">
+                        {{ form.delete_user(class="form-check-input") }}
+                        {{ form.delete_user.label(class="form-check-label") }}
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                   {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+{% endblock content %}

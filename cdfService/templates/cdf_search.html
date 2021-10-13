@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>CDF SEARCH</h1>
+        <body>
+            <div class="content-section">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4"></legend>
+                        <div class="form-group">
+                            {{ form.search.label(class="form-control-label") }}
+                            {% if form.search.errors %}
+                                {{ form.search(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                {% for error in form.search.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.search(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </form>
+            <b1>
+             <a class="nav-item nav-link" style="text-align: center;" href="{{ url_for('cdfData.build_rerun')}}">Missing CDFS? Click here!</a>
+            </b1>
+            </div>
+    </body>
+        
+{% endblock content %}

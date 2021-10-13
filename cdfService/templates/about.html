@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+    <table>
+        <tr>
+            <td>
+                <h3>CDF Links</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="nav-item nav-link" href="{{ url_for('cdfData.webapp_cdf_search')}}">Search and review cdfs</a>
+            </td>
+            <td>
+                <a class="nav-item nav-link" href="{{ url_for('cdfFilter.filter_reload') }}">CDF Flag Reload Page</a>
+            </td>
+            <td>
+                <a class="nav-item nav-link" href="{{ url_for('main.svn_info') }}">SVN Information Page</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="nav-item nav-link" href="{{ url_for('cdfFilter.filter_switch')}}">Filter management</a>
+            </td>
+        </tr>
+    </table>
+</body>
+{% endblock content %}

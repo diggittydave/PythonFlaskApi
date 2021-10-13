@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>CDF FILTERS</h1>
+        <body>
+            <div>
+            <table border="10" style="border-collapse: collapse">
+            <tr>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    Regex pattern to match
+                </td>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    Associated Service
+                </td>
+            </tr>
+            <tr>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ post.RESTRICTION }}
+                </td>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">    
+                    {{ post.SERVICE }}
+                </td>
+            </tr>
+            </table>
+        </div>
+        <h1>AFFECTED CDFS</h1>
+        <div>
+            <table border="10" style="border-collapse: collapse">
+            <tr>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    CDF NAME
+                </td>
+            </tr>
+            {% for cdf in affected_cdfs %}
+            <tr>
+                <td width="80" style="border: 2px solid  rgb(255, 0, 0)">
+                    <a class="nav-item nav-link" href="{{ url_for('cdfData.webapp_get_cdf', ID_KEY=cdf.ID_KEY) }}">{{ cdf.CDF_NAME }}</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+        <div class="content-section" style="kerning: 15px;";>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4"></legend>
+                    <div class="form-group">
+                        {{ form.filter.label(class="form-control-label") }}
+                        {% if form.filter.errors %}
+                            {{ form.filter(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                            {% for error in form.filter.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.filter(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.service.label(class="form-control-label") }}
+                        {% if form.service.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.service.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.service(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ form.remove_filter(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+        </body>
+            </div>
+        </body>
+        <b1>
+            
+        </b1>
+{% endblock content %}

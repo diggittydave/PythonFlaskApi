@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>CDF DATA FOR {{post.CDF_NAME}} </h1>
+        <body>
+            <div>
+                <table border="10" style="border-collapse: collapse">
+                    <tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            ID KEY
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.ID_KEY }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            CDF NAME
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.CDF_NAME }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            CDF PATH
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.CDF_PATH }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            Transportation Flag
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.Transportation }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            OM Flag
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.OM }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            Billing Flag
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.Billing }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            Restricted Flag
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.Is_Restricted }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            Approvers
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.Approvers }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            Date Updated
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.Date_Updated }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            Number of Columns
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.NUMBER_OF_COLUMNS }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            Last Updated By
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.LAST_UPD_BY }}
+                        </td>
+					</tr>
+					<tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            Requires Approval Flag
+                        </td>
+						<td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ post.Requires_Approval }}
+                        </td>
+					</tr>
+                </table>
+				<br>
+				<br>
+                <table  border="10" style="border-collapse: collapse">
+                    <tr>
+                        <td width="15" style="border: 2px solid  rgb(255, 0, 0)">
+                            {{ header }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </body>
+{% endblock content %}

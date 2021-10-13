@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+    <div>
+        SVN Gen Info
+        <table border="10" style="border-collapse: collapse">
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    URL
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ gen.URL }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Repository Root
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ gen.Repository_Root }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Repository UUID
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ gen.Repository_UUID }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Revision
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ gen.Revision }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Author
+
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ gen.Last_Changed_Author }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Revision
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ gen.Last_Changed_Rev }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Date
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ gen.Last_Changed_Date }}
+                </td>
+            </tr>
+        </table>
+        SVN Web Info
+        <table border="10" style="border-collapse: collapse">
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    URL
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ web.URL }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Repository Root
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ web.Repository_Root }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Repository UUID
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255,0,0)">
+                    {{ web.Repository_UUID }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Revision
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ web.Revision }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Author
+
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ web.Last_Changed_Author }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Revision
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ web.Last_Changed_Rev }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Date
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ web.Last_Changed_Date }}
+                </td>
+            </tr>
+        </table>
+        SVCP PROD Info
+        <table border="10" style="border-collapse: collapse">
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    URL
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ svcp.URL }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Repository Root
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ svcp.Repository_Root }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Repository UUID
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ svcp.Repository_UUID }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Revision
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ svcp.Revision }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Author
+
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ svcp.Last_Changed_Author }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Revision
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ svcp.Last_Changed_Rev }}
+                </td>
+            </tr>
+            <tr>
+                <td width="180" style="border: 2px solid  rgb(255, 0, 0)">
+                    Last Changed Date
+                </td>
+                <td width="580" style="border: 2px solid  rgb(255, 0, 0)">
+                    {{ svcp.Last_Changed_Date }}
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock content %}

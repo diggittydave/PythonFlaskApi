@@ -1,0 +1,40 @@
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"></legend>
+            <div class="form-group">
+                {{ form.filter.label(class="form-control-label") }}
+                {% if form.filter.errors %}
+                    {{ form.filter(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                    {% for error in form.filter.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.filter(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.service.label(class="form-control-label") }}
+                {% if form.service.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.service.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.service(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-check">
+                {{ form.reload(class="form-check-input")}}
+                {{ form.reload.label(class="form-check-label")}}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit_filter(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>

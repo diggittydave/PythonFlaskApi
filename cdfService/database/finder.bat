@@ -1,0 +1,1 @@
+dir C:\users\chq-davidwe\Documents\Projects\Python\CDFService\repository /s ' *.cdf'

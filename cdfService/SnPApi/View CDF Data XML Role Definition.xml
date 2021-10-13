@@ -1,0 +1,38 @@
+<?xml version="1.0" ?> 
+<role>
+  <role_name>View CDF API Data</role_name> 
+  <role_permission>
+    <permission>
+      <permission_name>CDFServiceAPI.cdf_data</permission_name> 
+      <permission_action>ACTION_UPDATE</permission_action> 
+      <permission_allowed>false</permission_allowed> 
+    </permission>
+    <permission>
+      <permission_name>CDFServiceAPI.cdf_data_view</permission_name> 
+      <permission_action>ACTION_VIEW</permission_action> 
+      <permission_allowed>true</permission_allowed> 
+    </permission>
+    <permission>
+      <permission_name>CDFServiceAPI.cdf_filter</permission_name> 
+      <permission_action>ACTION_UPDATE</permission_action> 
+      <permission_allowed>false</permission_allowed> 
+    </permission>
+    <permission>
+      <permission_name>CDFServiceAPI.cdf_filter_view</permission_name> 
+      <permission_action>ACTION_VIEW</permission_action> 
+      <permission_allowed>false</permission_allowed> 
+    </permission>
+  </role_permission>
+  <application_role>
+    <application_role_code>CSAV</application_role_code> 
+    <restrict_client>false</restrict_client> 
+    <multiple_clients>false</multiple_clients> 
+    <restrict_organization>false</restrict_organization> 
+    <multiple_organizations>false</multiple_organizations> 
+  </application_role>
+  <application>
+    <application_name>CDF Service API</application_name> 
+    <application_code>CSA</application_code> 
+    <application_type>WA</application_type> 
+  </application>
+</role>
